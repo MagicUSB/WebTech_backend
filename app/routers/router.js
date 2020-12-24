@@ -11,7 +11,7 @@ router.post('/api/genre', genres.createGenre);
 router.get('/api/genre/:id', genres.getBooksByGenreId);
 router.get('/api/genre_item/:id', genres.getGenreById);
 router.get('/api/genres', genres.genres);
-router.put('/api/genre/', genres.updateGenre);
+router.put('/api/genre/:id', genres.updateGenre);
 router.delete('/api/genre_item/:id', genres.deleteGenre);
 
 //Author router
@@ -19,7 +19,7 @@ router.post('/api/author', authors.createAuthor);
 router.get('/api/author/:id', authors.getBooksByAuthorId);
 router.get('/api/author_item/:id', authors.getAuthorById);
 router.get('/api/authors', authors.authors);
-router.put('/api/author', authors.updateAuthor);
+router.put('/api/author/:id', authors.updateAuthor);
 router.delete('/api/author_item/:id', authors.deleteAuthor);
 
 //Translator router
@@ -27,14 +27,14 @@ router.post('/api/translator', translators.createTranslator);
 router.get('/api/translator/:id', translators.getBooksByTranslatorId);
 router.get('/api/translator_item/:id', translators.getTranslatorById);
 router.get('/api/translators', translators.translators);
-router.put('/api/translator', translators.updateTranslator);
+router.put('/api/translator/:id', translators.updateTranslator);
 router.delete('/api/translator_item/:id', translators.deleteTranslator);
 
 //Book router
 router.post('/api/book', books.createBook);
 router.get('/api/book/:id', books.getBook);
 router.get('/api/books', books.books);
-router.put('/api/book', books.updateBook);
+router.put('/api/book/:id', books.updateBook);
 router.delete('/api/book/:id', books.deleteBook);
 
 module.exports = router;

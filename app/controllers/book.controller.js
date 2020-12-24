@@ -80,7 +80,7 @@ exports.getBook = (req, res) => {
 
 exports.updateBook = async (req, res) => {
     try {
-        let book = await Book.findByPk(req.body.id);
+        let book = await Book.findByPk(req.params.id);
         if (!book) {
             // return a response to client
             res.status(404).json({
@@ -99,7 +99,7 @@ exports.updateBook = async (req, res) => {
             let result = await Book.update(updatedObject,
                 {
                     returning: true,
-                    where: {id: req.body.id},
+                    where: {id: req.params.id},
                     attributes: ['id', 'book_name', 'author_id', 'genre_id', 'translator_id', 'year_of_publication']
                 }
             );

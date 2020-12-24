@@ -80,7 +80,7 @@ exports.getBooksByTranslatorId = (req, res) => {
 
 exports.updateTranslator = async (req, res) => {
     try {
-        let translator = await Translator.findByPk(req.body.id);
+        let translator = await Translator.findByPk(req.params.id);
 
         if (!translator) {
             // return a response to client
@@ -96,7 +96,7 @@ exports.updateTranslator = async (req, res) => {
             let result = await Translator.update(updatedObject,
                 {
                     returning: true,
-                    where: {id: req.body.id},
+                    where: {id: req.params.id},
                     attributes: ['id', 'name']
                 }
             );

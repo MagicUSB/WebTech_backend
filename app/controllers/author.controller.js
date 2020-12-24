@@ -77,7 +77,7 @@ exports.getBooksByAuthorId = (req, res) => {
 
 exports.updateAuthor = async (req, res) => {
     try {
-        let author = await Author.findByPk(req.body.id);
+        let author = await Author.findByPk(req.params.id);
 
         if (!author) {
             // return a response to client
@@ -93,7 +93,7 @@ exports.updateAuthor = async (req, res) => {
             let result = await Author.update(updatedObject,
                 {
                     returning: true,
-                    where: {id: req.body.id},
+                    where: {id: req.params.id},
                     attributes: ['id', 'name']
                 }
             );
