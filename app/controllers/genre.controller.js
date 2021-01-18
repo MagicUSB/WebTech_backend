@@ -111,6 +111,7 @@ exports.updateGenre = async (req, res) => {
             }
 
             res.status(200).json(result);
+            res.end();
         }
     } catch (error) {
         res.status(500).json({
