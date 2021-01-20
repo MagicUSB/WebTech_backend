@@ -56,7 +56,7 @@ exports.getTranslatorById = (req, res) => {
 }
 
 exports.getBooksByTranslatorId = (req, res) => {
-    db.sequelize.query("SELECT books.book_name AS 'Назва', " +
+    db.sequelize.query("SELECT books.id, books.book_name AS 'Назва', " +
         "authors.name AS 'Автор', " +
         "genres.name AS 'Жанр', " +
         "translators.name AS 'Перекладач', " +
